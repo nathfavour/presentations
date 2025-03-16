@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Future of Learning</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,11 +23,12 @@
         </div>
         
         <div class="navigation">
-            <button class="nav-button" id="next-slide">→</button>
+            <button class="nav-button" id="next-slide" aria-label="Next slide">→</button>
         </div>
         <div class="slide-number">1 / 10</div>
     </div>
     
+    <script src="adaptive.js"></script>
     <script src="navigation.js"></script>
 </body>
 </html>

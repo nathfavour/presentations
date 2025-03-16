@@ -2,14 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Future of Learning: How Technology is Changing Education</title>
     <link rel="stylesheet" href="style.css">
-    <meta http-equiv="refresh" content="0;url=slide1.html">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        .loader {
+            width: 80%;
+            max-width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .loader::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 30%;
+            background: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { left: -30%; }
+            100% { left: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <meta http-equiv="refresh" content="2;url=slide1.html">
 </head>
 <body>
     <div class="container">
-        <h1>Redirecting to presentation...</h1>
+        <h1>Loading Presentation...</h1>
+        <div class="loader"></div>
     </div>
 </body>
 </html>

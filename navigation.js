@@ -28,8 +28,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Add touch swipe navigation
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        const threshold = 50; // Minimum swipe distance
+        if (touchEndX < touchStartX - threshold) {
+            // Swipe left to right
+            navigateToSlide(currentSlide + 1);
+        } else if (touchEndX > touchStartX + threshold) {
+            // Swipe right to left
+            navigateToSlide(currentSlide - 1);
+        }
+    }
+    
     function navigateToSlide(slideNumber) {
         if (slideNumber < 1 || slideNumber > 10) return;
         window.location.href = `slide${slideNumber}.html`;
     }
+    
+    // Ensure content fits on screen
+    const adjustContentSize = function() {
+        const slide = document.querySelector('.slide');
+        const content = document.querySelector('.content');
+        
+        if (window.innerHeight < 500) {
+            slide.style.height = 'auto';
+            slide.style.overflowY = 'auto';
+        } else {
+            slide.style.height = '80vh';
+            slide.style.overflowY = 'hidden';
+        }
+    };
+    
+    // Run on load and resize
+    adjustContentSize();
+    window.addEventListener('resize', adjustContentSize);
 });

@@ -169,3 +169,119 @@ li:nth-child(5) { animation-delay: 1s; }
 .emphasis-box:hover {
     transform: scale(1);
 }
+
+/* New Responsive Styles */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    ul, ol {
+        font-size: 1.8rem;
+    }
+    
+    .slide {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.7em;
+    }
+    
+    ul, ol {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .slide {
+        padding: 25px;
+        height: 85vh;
+    }
+    
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .nav-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .slide-number {
+        left: 25px;
+        font-size: 1rem;
+    }
+    
+    .navigation {
+        right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5em;
+    }
+    
+    ul, ol {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-left: 0.5em;
+    }
+    
+    li {
+        margin-bottom: 0.7em;
+    }
+    
+    .slide {
+        padding: 20px;
+        width: 95%;
+        border-radius: 20px;
+    }
+    
+    .emoji {
+        font-size: 1.8rem;
+    }
+    
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .emphasis-box {
+        padding: 15px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (pointer: coarse) {
+    .nav-button {
+        padding: 15px;
+    }
+    
+    .slide {
+        overflow-y: auto;
+    }
+}
+
+/* Portrait orientation adjustments */
+@media (orientation: portrait) and (max-width: 768px) {
+    .slide {
